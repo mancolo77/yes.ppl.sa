@@ -1,4 +1,4 @@
-package olim.faazvv.ru
+package yes.ppl.sa
 
 import io.flutter.embedding.android.FlutterActivity
 
