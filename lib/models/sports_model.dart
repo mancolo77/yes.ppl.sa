@@ -75,3 +75,4 @@ class BadgeItem {
     required this.requiredPoints,
   });
 }
+

@@ -256,18 +256,22 @@ class _EventsTabState extends State<EventsTab> {
                                 children: [
                                   Icon(_iconForSport(event.sport), size: 16, color: AppTheme.orangeAccent),
                                   const SizedBox(width: 6),
-                                  Text(
-                                    event.tournament,
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppTheme.textSecondary,
+                                  Expanded(
+                                    child: Text(
+                                      event.tournament,
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppTheme.textSecondary,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
-                                  const Spacer(),
+                                  const SizedBox(width: 6),
                                   // Required "Example" Demo Label
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+                                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                     decoration: BoxDecoration(
                                       color: AppTheme.sectionBg,
                                       borderRadius: BorderRadius.circular(6),
@@ -285,7 +289,7 @@ class _EventsTabState extends State<EventsTab> {
                                   const SizedBox(width: 6),
                                   // Status Indicator
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
                                     decoration: BoxDecoration(
                                       color: isLive
                                           ? AppTheme.orangeAccent
@@ -310,10 +314,13 @@ class _EventsTabState extends State<EventsTab> {
                                   const SizedBox(width: 4),
                                   GestureDetector(
                                     onTap: () => _service.toggleEventFavorite(event.id),
-                                    child: Icon(
-                                      isFav ? Icons.favorite_rounded : Icons.favorite_border_rounded,
-                                      color: isFav ? Colors.red : AppTheme.textSecondary,
-                                      size: 20,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Icon(
+                                        isFav ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                                        color: isFav ? Colors.red : AppTheme.textSecondary,
+                                        size: 18,
+                                      ),
                                     ),
                                   ),
                                 ],
