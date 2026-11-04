@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'geo_service.dart';
 
 class FlagService {
-  static const String _apiKey = '8Qx6omqa9rh3NaRVeG9bLw';
+  static const String _apiKey = '8Qx6omqa9rh3NaRveG9bLw';
   static const String _cachedConfigKey = 'flagsmith_cached_appconfig';
 
   FlagsmithClient? _flagsmithClient;
